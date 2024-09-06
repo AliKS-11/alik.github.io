@@ -1,61 +1,116 @@
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   FRAM Design System
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Hanson&amp;family=Mulish:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>FRAM Design System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Hanson&amp;family=Mulish:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+        body {
             font-family: 'Mulish', sans-serif;
             background: linear-gradient(135deg, #e0f7fa, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
-  </style>
- </head>
- <body class="flex items-center justify-center min-h-screen">
-  <div class="text-center px-4">
-   <div class="flex justify-center items-center mb-4" style="transform: translateX(-280px);">
-    <img alt="Sailboat Icon" class="w-32 h-32" src="http://png.pngtree.com/png-clipart/20220124/original/pngtree-sailboat-icon-picture-png-image_7179746.png"/>
-    <div class="ml-4 text-left">
-     <h1 class="text-4xl font-bold text-gray-900">
-      FRAM
-     </h1>
-     <h2 class="text-xl text-gray-700">
-      DESIGN SYSTEM
-     </h2>
+        
+        .container {
+            text-align: center;
+            padding: 0 16px;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 16px;
+            transform: translateX(-280px);
+        }
+        
+        .logo {
+            width: 128px;
+            height: 128px;
+        }
+        
+        .logo-text {
+            margin-left: 16px;
+            text-align: left;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .main-title {
+            font-size: 56px;
+            font-weight: bold;
+            color: #333;
+            letter-spacing: 0.1em;
+            font-family: 'Hanson', sans-serif;
+            width: calc(100vw - 20px);
+        }
+        
+        .main-subtitle {
+            font-size: 36px;
+            color: #666;
+            font-family: 'Mulish', sans-serif;
+        }
+        
+        .button {
+            padding: 8px 16px;
+            background-color: #c6efce;
+            color: #3e8e41;
+            border-radius: 50px;
+            font-family: 'Mulish', sans-serif;
+            text-decoration: none;
+        }
+        
+        .button:hover {
+            background-color: #a9d8b9;
+        }
+        
+        .link {
+            color: #337ab7;
+            font-family: 'Mulish', sans-serif;
+            text-decoration: none;
+        }
+        
+        .link:hover {
+            color: #23527c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img class="logo" alt="Sailboat Icon" src="http://png.pngtree.com/png-clipart/20220124/original/pngtree-sailboat-icon-picture-png-image_7179746.png"/>
+            <div class="logo-text">
+                <h1 class="title">FRAM</h1>
+                <h2 class="subtitle">DESIGN SYSTEM</h2>
+            </div>
+        </div>
+        <div>
+            <h3 class="main-title">DESIGN SYSTEM</h3>
+            <h4 class="main-subtitle">STARTER KIT</h4>
+        </div>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-top: 24px;">
+            <a class="button" href="index.html">Вернутся обратно</a>
+            <span class="button">Typography</span>
+            <span class="button">Girds</span>
+            <span class="button">Shadows &amp; Blurs</span>
+        </div>
+        <div style="margin-top: 24px;">
+            <a class="link" href="http://framcreativesolutions.com">framcreativesolutions.com</a>
+        </div>
     </div>
-   </div>
-   <div class="mt-6">
-    <h3 class="text-7xl font-bold text-gray-900 tracking-widest mx-2" style="width: calc(100vw - 20px); font-family: 'Hanson', sans-serif;">
-     DESIGN SYSTEM
-    </h3>
-    <h4 class="text-5xl text-gray-700 mt-2" style="font-family: 'Mulish', sans-serif;">
-     STARTER KIT
-    </h4>
-   </div>
-   <div class="flex justify-center flex-wrap space-x-4 mt-6">
-    <a href="index.html" class="px-4 py-2 bg-green-100 text-green-700 rounded-full" style="font-family: 'Mulish', sans-serif;">
-     Вернутся обратно
-    </a>
-    <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full" style="font-family: 'Mulish', sans-serif;">
-     Typography
-    </span>
-    <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full" style="font-family: 'Mulish', sans-serif;">
-     Girds
-    </span>
-    <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full" style="font-family: 'Mulish', sans-serif;">
-     Shadows &amp; Blurs
-    </span>
-   </div>
-   <div class="mt-6">
-    <a class="text-blue-600" href="http://framcreativesolutions.com" style="font-family: 'Mulish', sans-serif;">
-     framcreativesolutions.com
-    </a>
-   </div>
-  </div>
- </body>
+</body>
 </html>
