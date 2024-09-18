@@ -1,320 +1,390 @@
 <html>
 <head>
-    <title>WebCraft Pro - Профессиональные Услуги По разработке веб-сайтов</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <title>Optical Services</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f7f7f7;
-            background-image: url('https://storage.googleapis.com/a1aa/image/fPyPjxvZi50QaSTfhWl8Bodof6uBZUonsSPa6ftRgylmpwvNB.jpg'); /* Background image */
-            background-size: cover;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-position: center;
-            color: #333333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
         }
-        .header, .footer {
-            background-color: rgba(52, 58, 64, 0.8);
-            color: white;
-        }
-        .header a, .footer a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        .header a:hover, .footer a:hover {
-            text-decoration: underline;
-        }
-        .main-content {
-            padding: 40px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #333333;
-        }
-        .service-item, .portfolio-item, .testimonial-item {
-            margin-bottom: 20px;
+        .container {
+            width: 80%;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border: 1px solid #ccc;
         }
-        .service-item:hover, .portfolio-item:hover, .testimonial-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
         }
-        .portfolio-item img {
-            border-radius: 8px;
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .text {
+            flex: 1;
+            padding: 20px;
+        }
+        .text h2 {
+            font-size: 24px;
             margin-bottom: 10px;
+        }
+        .text p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .text button {
+            background-color: #8b5d5d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .image {
+            flex: 1;
+        }
+        .image img {
             width: 100%;
             height: auto;
         }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
+        .top-bar {
+            background-color: #FFFFFF;
+            color: #000000;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
         }
-        .contact-form button {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background-color: #5A4A44;
+            color: #A9A9A9;
         }
-        .contact-form button:hover {
-            background-color: #2980b9;
+        .navbar a {
+            color: #A9A9A9;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
         }
-        .footer {
-            padding: 20px;
+        .navbar a:hover {
+            color: #FFFFFF;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 80px);
             text-align: center;
         }
-        .footer .social-icons a {
-            margin: 0 10px;
-            color: white;
+        .main-content h1 {
+            font-size: 48px;
+            margin: 0;
         }
-        .footer .social-icons a:hover {
-            color: #adb5bd;
+        .main-content .button {
+            background-color: #A65A4A;
+            color: #FFFFFF;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            text-decoration: none;
         }
-        .mobile-menu {
-            display: none;
+        .main-content .button:hover {
+            background-color: #8B4A3A;
         }
-        @media (max-width: 768px) {
-            .desktop-menu {
-                display: none;
-            }
-            .mobile-menu {
-                display: block;
-            }
-            .mobile-menu-items {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                background-color: rgba(52, 58, 64, 0.8);
-                position: absolute;
-                top: 60px;
-                left: 10%;
-                right: 10%;
-                z-index: 10;
-                width: 80%;
-            }
-            .mobile-menu-items a {
-                padding: 10px;
-                border-bottom: 1px solid #495057;
-                width: 100%;
-                text-align: center;
-            }
-        }
-        .service-description {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-        }
-        .service-item:hover .service-description {
-            max-height: 500px;
-            opacity: 1;
-        }
-        .gif-block {
-            margin-bottom: 20px;
+        .products-container {
+            width: 90%;
+            margin: 0 auto;
             padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            overflow: hidden;
-            border: 1px solid #ccc;
         }
-        .gif-block img {
+        .products-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .products-header h1 {
+            font-size: 24px;
+            color: #c13d3d;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+        }
+        .product img {
             width: 100%;
-            border-radius: 8px;
-            transition: opacity 0.3s ease-in-out;
+            height: auto;
         }
-        .gif-block img.static {
-            opacity: 1;
+        .product h2 {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0 5px;
         }
-        .gif-block img.animated {
-            opacity: 0;
+        .product p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
         }
-        .gif-block:hover img.static {
-            opacity: 0;
+        .large-product {
+            width: calc(66.666% - 20px);
         }
-        .gif-block:hover img.animated {
-            opacity: 1;
+        .small-product {
+            width: calc(33.333% - 20px);
         }
-        @media (max-width: 768px) {
-            .service-item .service-description {
-                max-height: 0;
-                opacity: 0;
-                transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-            }
-            .service-item .service-description.show {
-                max-height: 500px;
-                opacity: 1;
-            }
+        .product .price {
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+        .product .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #000;
+            color: #fff;
+            padding: 2px 5px;
+            font-size: 12px;
+        }
+        .product .color-options {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+        }
+        .product .color-options span {
+            width: 10px;
+            height: 10px;
+            display: block;
+            border-radius: 50%;
+        }
+    
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGZ941j743Gr3wYoFlg2D6dZLLJGlzfCca9w&s');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            color: white;
+            padding: 50px;
+        }
+        .hero-content {
+            text-align: left;
+            max-width: 500px;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero-content p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .hero-button {
+            background-color: #8b5e3c;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .newsletter-container {
+            text-align: center;
+            background-color: #9B5A4A;
+            color: #FFFFFF;
+            padding: 50px 20px;
+        }
+        .newsletter-container .address {
+            margin-bottom: 20px;
+        }
+        .newsletter-container .newsletter {
+            margin-bottom: 40px;
+        }
+        .newsletter-container .input-container {
+            position: relative;
+            display: inline-block;
+        }
+        .newsletter-container .input-container input {
+            width: 400px;
+            padding: 10px;
+            border: 2px solid #FFFFFF;
+            border-radius: 25px;
+            background-color: transparent;
+            color: #FFFFFF;
+            font-size: 16px;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #5A4A44;
+            color: #FFFFFF;
+        }
+        .footer .line {
+            width: 100%;
+            height: 1px;
+            background-color: #FFFFFF;
+            margin: 20px 0;
+        }
+        .footer div {
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
-    <header class="header py-4">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <div class="logo text-2xl font-bold">
-                <a href="#">WebCraft Pro</a>
+    <div class="top-bar">
+        ACHETEZ METI AU 20 RUE DES MARTYRS PARIS 9
+    </div>
+    <div class="navbar">
+        <div class="left-nav">
+            <a href="#">OPTIQUES</a>
+            <a href="#">SOLAIRES</a>
+            <a href="#">VOIR JUSTE</a>
+        </div>
+        <div class="right-nav">
+            <a href="#">WISHLIST</a>
+            <a href="#">EXAMEN DE VUE</a>
+            <a href="#">PANIER</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1>VOIR JUSTE</h1>
+        <a href="#" class="button">NOS MEILLEURES VENTES</a>
+    </div>
+    <div class="products-container">
+        <div class="products-header">
+            <h1>METI DÉMOCRATISE L'OPTIQUE HAUT DE GAMME. NOUS SOMMES CRÉATEURS ET OPTICIENS.</h1>
+        </div>
+        <div class="products">
+            <div class="product large-product">
+                <img alt="" height="400" src="https://media.discordapp.net/attachments/996437688469172234/1285698208168677498/2024-09-17_232258.png?ex=66eb3743&is=66e9e5c3&hm=a4574f407988a12110dc119582935133fc3d28bce1fefde2acd337734c1f4558&=&format=webp&quality=lossless&width=478&height=593" width="600"/>
+                <h2>Krafft</h2>
+                <p class="price">140 €</p>
+                <div class="color-options">
+                    <span class="color1"></span>
+                    <span class="color2"></span>
+                </div>
             </div>
-            <nav class="desktop-menu">
-                <a href="#home">Главная</a>
-                <a href="#about">О компании</a>
-                <a href="#services">Услуги</a>
-                <a href="#portfolio">Портфолио</a>
-                <a href="#testimonials">Отзывы</a>
-                <a href="#contact">Контакт</a>
-            </nav>
-            <div class="mobile-menu relative">
-                <button class="text-white" id="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="mobile-menu-items hidden" id="mobile-menu-items">
-                    <a href="#home">Главная</a>
-                    <a href="#about">О компании</a>
-                    <a href="#services">Услуги</a>
-                    <a href="#portfolio">Портфолио</a>
-                    <a href="#testimonials">Отзывы</a>
-                    <a href="#contact">Контакт</a>
+            <div class="product small-product">
+                <img alt="" height="400" src="https://media.discordapp.net/attachments/996437688469172234/1285698208470798488/2024-09-17_232313.png?ex=66eb3744&is=66e9e5c4&hm=02512fa06c0ab10b1ac62f89fb99da3f32f8c6773c55f0553031a8a0e9a69c3e&=&format=webp&quality=lossless&width=291&height=361" width="300"/>
+                <h2>On ira tous</h2>
+                <p class="price">190 €</p>
+              
+            </div>
+            <div class="product small-product">
+                <img alt="" height="400" src="https://media.discordapp.net/attachments/996437688469172234/1285698209401929769/2024-09-17_232355.png?ex=66eb3744&is=66e9e5c4&hm=8dc972449c4552640da8435ca46742c1ee4312c6a9d898233f98374de50e5cda&=&format=webp&quality=lossless&width=287&height=368" width="300"/>
+                <h2>Pan Coupé</h2>
+                <p class="price">100 €</p>
+                <div class="color-options">
+                    <span class="color1"></span>
+                    <span class="color2"></span>
+                    <span class="color3"></span>
+                </div>
+            </div>
+            <div class="product small-product">
+                <img alt="" height="400" src="https://media.discordapp.net/attachments/996437688469172234/1285698209066254419/2024-09-17_232343.png?ex=66eb3744&is=66e9e5c4&hm=6c8b15a79ee863d94b81a168f68baee15210ef05a74a056bd334d8e0f9ef0f21&=&format=webp&quality=lossless&width=290&height=371" width="300"/>
+                <h2>Belle Dame</h2>
+                <p class="price">140 €</p>
+                <div class="color-options">
+                    <span class="color1"></span>
+                    <span class="color2"></span>
+                </div>
+            </div>
+            <div class="product small-product">
+                <img alt="" height="400" src="https://media.discordapp.net/attachments/996437688469172234/1285698208772657192/2024-09-17_232331.png?ex=66eb3744&is=66e9e5c4&hm=ed990d1ce418f86255eaa89924bbaf9f59bcf47ad717f1934e896b6c47eefa45&=&format=webp&quality=lossless&width=293&height=370" width="300"/>
+                <h2>Belle de jour</h2>
+                <p class="price">190 €</p>
+                <div class="badge">CRAFT</div>
+                <div class="color-options">
+                    <span class="color1"></span>
+                    <span class="color2"></span>
+                </div>
+            </div>
+            <div class="product small-product">
+                <img alt="" height="400" src="https://media.discordapp.net/attachments/996437688469172234/1285698208470798488/2024-09-17_232313.png?ex=66eb3744&is=66e9e5c4&hm=02512fa06c0ab10b1ac62f89fb99da3f32f8c6773c55f0553031a8a0e9a69c3e&=&format=webp&quality=lossless&width=291&height=361" width="300"/>
+                <h2>Product Name</h2>
+                <p class="price">Price</p>
+                <div class="color-options">
+                    <span class="color1"></span>
+                    <span class="color2"></span>
                 </div>
             </div>
         </div>
-    </header>
-    <main class="main-content container mx-auto px-4">
-        <section id="home">
-            <h1 class="section-title">Добро пожаловать на WebCraft Pro</h1>
-            <p>Трансформация Вашего присутствия в Интернете с помощью пользовательских веб-решений</p>
-        </section>
-        <section id="about">
-            <h2 class="section-title">О компании</h2>
-            <p>WebCraft Pro - профессиональное агентство по разработке веб-сайтов, предлагающее индивидуальные решения для веб-сайтов компаниям и частным лицам. Наша команда опытных веб-разработчиков и дизайнеров тесно сотрудничает с клиентами, чтобы понять их уникальные потребности и цели, создавая индивидуальные веб-сайты, которые способствуют достижению результатов. Уделяя особое внимание качеству, скорости и доступности, мы помогаем нашим клиентам обеспечить сильное присутствие в Интернете, которое выделяет их среди конкурентов.</p>
-        </section>
-        <section id="services">
-            <h2 class="section-title">Услуги</h2>
-            <div class="service-item">
-                <h3 class="text-xl font-semibold cursor-pointer" onclick="toggleDescription(this)">Индивидуальный дизайн веб-сайта <i class="fas fa-chevron-down"></i></h3>
-                <div class="service-description">
-                    <p>Наша команда опытных дизайнеров создает уникальные, визуально привлекательные дизайны, отражающие индивидуальность и ценности вашего бренда. Мы учитываем все последние тенденции в веб-дизайне и адаптируем их под ваши нужды.</p>
-                </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="text">
+                <h2>PRIX JUSTES</h2>
+                <p>
+                    Nous produisons nous-même vos montures, sans intermédiaires, pour des prix « justes ».
+                    <br/>
+                    - Nos lunettes sont belles et durables (garanties 2 ans, soit plus que partout ailleurs).
+                </p>
+                <button>DECOUVRIR L'UNIVERS</button>
             </div>
-            <div class="service-item">
-                <h3 class="text-xl font-semibold cursor-pointer" onclick="toggleDescription(this)">Разработка веб-сайта <i class="fas fa-chevron-down"></i></h3>
-                <div class="service-description">
-                    <p>Наша команда опытных разработчиков создает пользовательские веб-сайты с использованием новейших технологий и фреймворков, обеспечивая быстрый, безопасный и масштабируемый веб-сайт. Мы используем современные фреймворки и библиотеки, чтобы ваш сайт был быстрым и надежным.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <h3 class="text-xl font-semibold cursor-pointer" onclick="toggleDescription(this)">Адаптивный дизайн <i class="fas fa-chevron-down"></i></h3>
-                <div class="service-description">
-                    <p>Мы обеспечиваем бесперебойное взаимодействие с пользователем на всех устройствах и экранах любого размера, включая настольные компьютеры, ноутбуки, планшеты и мобильные устройства. Адаптивный дизайн позволяет вашим пользователям комфортно пользоваться сайтом на любом устройстве.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <h3 class="text-xl font-semibold cursor-pointer" onclick="toggleDescription(this)">Решения для электронной коммерции <i class="fas fa-chevron-down"></i></h3>
-                <div class="service-description">
-                    <p>Мы создаем интернет-магазины, которые стимулируют продажи и конверсии, с такими функциями, как платежные шлюзы, интеграция доставки и управление продуктами. Наши специалисты помогут вам настроить все необходимые функции для успешной работы вашего онлайн-бизнеса.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <h3 class="text-xl font-semibold cursor-pointer" onclick="toggleDescription(this)">Системы управления контентом (CMS) <i class="fas fa-chevron-down"></i></h3>
-                <div class="service-description">
-                    <p>Мы предоставляем простые в использовании платформы для управления контентом вашего веб-сайта, включая WordPress, Joomla и Drupal. CMS позволяет вам легко обновлять и управлять содержимым вашего сайта без необходимости знаний в программировании.</p>
-                </div>
-            </div>
-            <div class="service-item">
-                <h3 class="text-xl font-semibold cursor-pointer" onclick="toggleDescription(this)">Обслуживание веб-сайта <i class="fas fa-chevron-down"></i></h3>
-                <div class="service-description">
-                    <p>Наша команда обеспечивает постоянную поддержку для бесперебойной работы вашего веб-сайта, включая обновления, резервное копирование и проверки безопасности. Мы гарантируем, что ваш сайт всегда будет в отличном состоянии.</p>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio">
-            <h2 class="section-title">Портфолио</h2>
-            <div class="portfolio-item">
-                <img alt="Static Image 1" class="static" src="https://steamuserimages-a.akamaihd.net/ugc/957468055297919221/1733CEF11AA924ED8A3682C10F29C760E2308595/?imw=512&imh=286&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"/>
-                <p>Описание разработанного веб-сайта 1.</p>
-            </div>
-            <div class="portfolio-item">
-                <img alt="Скриншот веб-сайта 2" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-Hh5RPsKhtBPsWCFSiEKnUJ6x/user-8qgiVpCV0U0b7zDjfFInHgjl/img-yc2mQ7BBysmnXH2KHWZMUTtU.png?st=2024-09-11T20%3A40%3A19Z&se=2024-09-11T22%3A40%3A19Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-10T23%3A29%3A47Z&ske=2024-09-11T23%3A29%3A47Z&sks=b&skv=2024-08-04&sig=d1MLeC11IbR9tiwHqdde3FEudm3GDDIYJJDUYKfvvK4%3D"/>
-                <p>Описание разработанного веб-сайта 2.</p>
-            </div>
-        </section>
-        <section id="testimonials">
-            <h2 class="section-title">Отзывы</h2>
-            <div class="testimonial-item">
-                <p>"Отличная работа! Очень доволен результатом."</p>
-                <p>- Клиент 1</p>
-            </div>
-            <div class="testimonial-item">
-                <p>"Профессиональный подход и качественная работа."</p>
-                <p>- Клиент 2</p>
-            </div>
-        </section>
-        <section id="gifs">
-            <h2 class="section-title">Анимированные изображения</h2>
-            <div class="gif-block">
-                <img alt="Static Image 1" class="static" src="https://steamuserimages-a.akamaihd.net/ugc/957468055297919221/1733CEF11AA924ED8A3682C10F29C760E2308595/?imw=512&imh=286&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"/>
-                <img alt="Animated GIF 1" class="animated" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"/>
-            </div>
-        </section>
-        <section id="contact">
-            <h2 class="section-title">Контакт</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Ваше имя" />
-                <input type="email" placeholder="Ваш email" />
-                <textarea placeholder="Ваше сообщение"></textarea>
-                <button type="submit">Отправить</button>
-            </form>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="container mx-auto">
-            <p>© 2023 WebCraft Pro. Все права защищены.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div>
-                <a href="#">Условия предоставления услуг</a>
-                <a href="#">Политика конфиденциальности</a>
+            <div class="image">
+                <img alt="" height="400" src="https://media.discordapp.net/attachments/996437688469172234/1285699495207764152/image.png?ex=66eb3876&is=66e9e6f6&hm=f296af5dc57e26d1d09c8df23fb910a5a970ac63f3c460d3a5a5edf144ed2b6e&=&format=webp&quality=lossless&width=477&height=593" width="400"/>
             </div>
         </div>
-    </footer>
-    <script>
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            var menuItems = document.getElementById('mobile-menu-items');
-            if (menuItems.classList.contains('hidden')) {
-                menuItems.classList.remove('hidden');
-            } else {
-                menuItems.classList.add('hidden');
-            }
-        });
-
-        function toggleDescription(element) {
-            var description = element.nextElementSibling;
-            if (description.classList.contains('show')) {
-                description.classList.remove('show');
-            } else {
-                description.classList.add('show');
-            }
-        }
-    </script>
+        <div class="section">
+            <div class="text">
+                <h2>EXPERTISE OPTIQUE</h2>
+                <p>
+                    Nos opticiens sont là pour trouver les solutions optiques les plus adaptées à votre quotidien: qu'il s'agisse de verres progressifs ou unifocaux. Passez en salle d'examen pour un diagnostic précis.
+                </p>
+                <button>EXPERTISE ET QUALITÉ</button>
+            </div>
+            <div class="image">
+                <img alt="" height="400" src="https://media.discordapp.net/attachments/996437688469172234/1285699495492980818/image.png?ex=66eb3876&is=66e9e6f6&hm=903d58762f88506336c69240d3a185d9b5c751b76a5ec2261d08d26861c85f24&=&format=webp&quality=lossless&width=471&height=593." width="400"/>
+            </div>
+        </div>
+        <div class="section">
+            <div class="text">
+                <h2>SIMPLIFIEZ-VOUS LA VIE !</h2>
+                <p>
+                    Nos magasins sont équipés d'une salle d'examen pour une prise en charge personnalisée et simplifiée.
+                </p>
+                <button>EXPERTISE ET QUALITÉ</button>
+            </div>
+            <div class="image">
+                <img alt="" height="400" src="https://media.discordapp.net/attachments/996437688469172234/1285699495786447001/image.png?ex=66eb3876&is=66e9e6f6&hm=50f68bd348fca1a8a7640fe7b50dcaf27d76e67ef5379b1545bebda0a21120e0&=&format=webp&quality=lossless&width=481&height=593" width="400"/>
+            </div>
+        </div>
+    </div>
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>Produire plus juste</h1>
+            <p>Empreinte carbone mesurée, réduite et compensée. À chaque paire achetée, une paire offerte à une personne démunie.</p>
+            <button class="hero-button">PRODUIRE PLUS JUSTE</button>
+        </div>
+    </div>
+    <div class="newsletter-container">
+        <div class="address">
+            <p>METI<br>20 RUE DES MARTYRS, PARIS 9E<br>MARDI - SAMEDI, 10H - 19H</p>
+        </div>
+        <div class="newsletter">
+            <p>Recevez notre newsletter pour profiter de nos offres et connaitre nos nouveautés</p>
+        </div>
+        <div class="input-container">
+            <input type="text" placeholder="">
+        </div>
+    </div>
 </body>
 </html>
